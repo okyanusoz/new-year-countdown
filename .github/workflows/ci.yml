@@ -2,15 +2,17 @@ name: CI
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   test_pull_request:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout
+      - uses: actions/setup-node
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm install
+      - name: Test build
+        run: npm run build
