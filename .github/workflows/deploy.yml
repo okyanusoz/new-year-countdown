@@ -18,7 +18,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        uses: nwtgck/actions-netlify@main
+        uses: nwtgck/actions-netlify@v1.1
         with:
             publish-dir: './build'
             production-branch: main
