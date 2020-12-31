@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -18,20 +18,13 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-            publish-dir: './build'
-            production-branch: main
-            deploy-message: '${{ github.event.head_commit.message }}'
+        run: netlify deploy --dir=build --prod
         env:
             NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_NAME }}
             NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
       - name: Create build tarball
-        run: tar -zcvf new-year-countdown.tar.gz build
-      - uses: South-Paw/action-netlify-deploy@v1.0.4
+        run: tar -zcvf new-year-countdown.tar.gz build 
+      - uses: actions/upload-artifact@v2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          netlify-auth-token: ${{ secrets.NETLIFY_TOKEN }}
-          netlify-site-id: ${{ secrets.NETLIFY_SITE_NAME }}
-          build-dir: './build'
-          draft: false
+          name: Built app
+          path: new-year-countdown.tar.gz
