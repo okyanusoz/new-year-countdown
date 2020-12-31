@@ -28,7 +28,10 @@ jobs:
             NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
       - name: Create build tarball
         run: tar -zcvf new-year-countdown.tar.gz build
-      - uses: actions/upload-artifact@v2
+      - uses: South-Paw/action-netlify-deploy@v1.0.4
         with:
-          name: Built app
-          path: build
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_NAME }}
+          build-dir: './build'
+          draft: false
