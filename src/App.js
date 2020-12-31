@@ -62,6 +62,8 @@ function App() {
           {secondsLeft} seconds
         </div>
       ) : null}
+      <br />
+      <a href="https://github.com/okyanusoz/new-year-countdown">Source code</a>
     </div>
   );
 }
