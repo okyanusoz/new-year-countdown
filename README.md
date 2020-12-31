@@ -2,7 +2,7 @@
 
 This is a simple new year countdown(currently 2021).
 
-## Running it locally
+<h3>Running it locally</h3>
 
 You need Node.js(at least 12 is recommended.)
 
@@ -19,7 +19,7 @@ To build, run(after running npm install):
 
 The built app will be in the build directory.
 
-## Contributing
+<h3>Contributing</h3>
 
 To contribute, just send a pull request.
 The tests will run, and if they succeed, then I will be happy to merge your PR.
