@@ -9,8 +9,10 @@ You need Node.js(at least 12 is recommended.)
 First, edit src/Config.js if would you like to change the configuration.
 
 Then run:
-        npm install
-        npm start
+<code>
+npm install
+npm start
+</code>
 
 The app will now be listening on http://localhost:3000.
 
