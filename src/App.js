@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import bootstrap/dist/css/bootstrap.min.css
 import Config from './Config.js'
 import { constructTimeLeftItem } from './TimeLeft.js'
 import { useEffect, useState } from 'react'
