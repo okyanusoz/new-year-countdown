@@ -16,3 +16,10 @@ jobs:
         run: npm install
       - name: Test build
         run: npm run build
+      - name: Post failure message
+        if: ${{ failure() }}
+        uses: harupy/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: pr-failure-template.md
