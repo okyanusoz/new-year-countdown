@@ -10,4 +10,4 @@ Once you push another commit, Github Actions will automatically try the build th
 
 Happy coding!
 
-_This is an automated message.
+This is an automated message.
