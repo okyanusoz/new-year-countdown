@@ -11,7 +11,7 @@ function App() {
     var interval
     const callback = () => {
       const now = new Date().getTime()
-      const distance = Config.countdownEpochSeconds - now
+      const distance = new Date(Config.countdownDate) - now
       const days = Math.floor(distance / (1000 * 60 * 60 * 24))
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
