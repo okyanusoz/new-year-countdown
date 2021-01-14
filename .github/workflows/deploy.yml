@@ -8,6 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
+    environment:
+      name: deploy
+      url: https://new-year-countdown-okyanusoz.netlify.app/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
