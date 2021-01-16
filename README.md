@@ -26,7 +26,7 @@ To build, run(after running npm install):<br>
 
 The built app will be in the build directory.
 
-If you just want to build the app, you can also get the built app from <a href="https://github.com/okyanusoz/new-year-countdown/actions">GitHub Actions</a>. The Deploy To Netlify action uploads the built app as a zip file.
+If you just want to build the app, you can also get the built app from <a href="https://github.com/okyanusoz/new-year-countdown/actions?query=workflow%3A%22Deploy+to+Netlify%22">Deploy To Netlify workflow.</a> The workflow uploads the built app as an artifact.
 
 <h3>Contributing</h3>
 
