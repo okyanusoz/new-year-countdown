@@ -17,5 +17,10 @@ fs.writeFileSync(
     modified_index_html
 )
 
-// Delete asset-manifest.json (this is a production build, we don't need it)
-fs.unlinkSync("asset-manifest.json")
+try {
+    // Delete asset-manifest.json (this is a production build, we don't need it)
+    fs.unlinkSync("asset-manifest.json")
+}
+catch(e){
+    // ignore
+}
