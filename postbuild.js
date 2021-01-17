@@ -19,7 +19,7 @@ fs.writeFileSync(
 
 try {
     // Delete asset-manifest.json (this is a production build, we don't need it)
-    fs.unlinkSync("asset-manifest.json")
+    fs.unlinkSync(join("build", "asset-manifest.json"))
 }
 catch(e){
     // ignore
