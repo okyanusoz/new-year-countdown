@@ -1,4 +1,4 @@
-name: Deploy to Netlify
+name: Build and Deploy
 
 on:
   workflow_dispatch:
@@ -6,26 +6,42 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy:
+  build:
+    name: Build app
     runs-on: ubuntu-20.04
-    environment:
-      name: Netlify
-      url: https://new-year-countdown-okyanusoz.netlify.app/
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Get source code
+        uses: actions/checkout@v2
+      - name: Install Node.js 14
+        uses: actions/setup-node@v2
         with:
           node-version: 14
       - name: Install dependencies
         run: npm install
       - name: Build
         run: npm run build
-      - name: Deploy
+      - name: Upload built app
+        uses: actions/upload-artifact@v2
+        with:
+          name: Built app
+          path: build
+      
+  deploy:
+    name: Deploy to Netlify
+    runs-on: ubuntu-20.04
+    needs: build
+    environment:
+      name: Netlify
+      url: https://new-year-countdown-okyanusoz.netlify.app/
+    steps:
+      - name: Download built app
+        uses: actions/download-artifact@v2
+        with:
+          name: Built app
+          path: build
+      - name: Deploy🚀
         run: netlify deploy --dir=build --prod
         env:
             NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_NAME }}
             NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Built app
-          path: build
+
