@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Config from './Config.js'
 import { constructTimeLeftItem } from './TimeLeft.js'
 import { useEffect, useState } from 'react'
+import GitHubForkRibbon from 'react-github-fork-ribbon'
 
 function App() {
   const [timeLeft, setTimeLeft] = useState("Loading...")
@@ -63,9 +64,11 @@ function App() {
         </div>
       ) : null}
       <br />
-      <a href="https://github.com/okyanusoz/new-year-countdown">Source code</a>
+      <GitHubForkRibbon href={`https://github.com/${Config.GITHUB_REPO}`} target="_blank" color="black" position="right">
+        Fork me on GitHub
+      </GitHubForkRibbon>
     </div>
-  );
+  )
 }
 
 export default App
