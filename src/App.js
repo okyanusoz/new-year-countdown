@@ -64,7 +64,7 @@ function App() {
         </div>
       ) : null}
       <br />
-      <GitHubForkRibbon href={`https://github.com/${Config.GITHUB_REPO}`} target="_blank" position="right">
+      <GitHubForkRibbon href={`https://github.com/${Config.GITHUB_REPO}`} target="_blank" color="black" position="right">
         Fork me on GitHub
       </GitHubForkRibbon>
     </div>
