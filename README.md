@@ -1,4 +1,5 @@
 # New Year Countdown
+![Build Status](https://github.com/okyanusoz/new-year-countdown/workflows/Build%20and%20Deploy/badge.svg)
 
 See it in action: <a href="https://new-year-countdown-okyanusoz.netlify.app/">https://new-year-countdown-okyanusoz.netlify.app/</a>
 
