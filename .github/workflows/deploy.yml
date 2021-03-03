@@ -49,7 +49,7 @@ jobs:
         env:
           VERCEL_PROJECT_JSON: ${{ secrets.VERCEL_PROJECT_JSON }}
       - name: Update Vercel CLI
-        run: npm install -g vercel@latest
+        run: sudo npm install -g vercel@latest
       - name: Deploy🚀
         run: vercel --token $VERCEL_TOKEN --prod
         env:
