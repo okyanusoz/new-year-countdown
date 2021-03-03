@@ -27,21 +27,30 @@ jobs:
           path: build
       
   deploy:
-    name: Deploy to Netlify
+    name: Deploy to Vercel
     runs-on: ubuntu-20.04
     needs: build
+    defaults:
+      run:
+        shell: bash
     environment:
-      name: Netlify
-      url: https://new-year-countdown-okyanusoz.netlify.app/
+      name: Vercel
+      url: https://new-year-countdown-nine.vercel.app/
     steps:
       - name: Download built app
         uses: actions/download-artifact@v2
         with:
           name: Built app
           path: build
-      - name: Deploy🚀
-        run: netlify deploy --dir=build --prod
+      - name: Create .vercel/project.json
+        run: |
+          mkdir .vercel
+          echo $VERCEL_PROJECT_JSON > .vercel/project.json
         env:
-            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_NAME }}
-            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-
+          VERCEL_PROJECT_JSON: ${{ secrets.VERCEL_PROJECT_JSON }}
+      - name: Update Vercel CLI
+        run: npm install -g vercel@latest
+      - name: Deploy🚀
+        run: vercel --token $VERCEL_TOKEN --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
