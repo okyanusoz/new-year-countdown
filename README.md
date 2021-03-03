@@ -1,7 +1,7 @@
 # New Year Countdown
 ![Build Status](https://github.com/okyanusoz/new-year-countdown/workflows/Build%20and%20Deploy/badge.svg)
 
-See it in action: <a href="https://new-year-countdown-okyanusoz.netlify.app/">https://new-year-countdown-okyanusoz.netlify.app/</a>
+See it in action: https://new-year-countdown-nine.vercel.app/
 
 This is a simple new year countdown(currently 2021).
 
@@ -11,11 +11,13 @@ You need Node.js(at least 12 is recommended.)
 
 First, edit src/Config.js if would you like to change the configuration.
 
-Then run:<br>
+Then run:
+
 <code>
 npm install
 </code>
-<br>
+
+
 <code>
 npm start
 </code>
@@ -27,7 +29,7 @@ To build, run(after running npm install):<br>
 
 The built app will be in the build directory.
 
-If you just want to build the app, you can also get the built app from <a href="https://github.com/okyanusoz/new-year-countdown/actions?query=workflow%3A%22Deploy+to+Netlify%22">Deploy To Netlify workflow.</a> The workflow uploads the built app as an artifact.
+If you just want to build the app, you can also get the built app from <a href="https://github.com/okyanusoz/new-year-countdown/actions/workflows/deploy.yml">Build and Deploy workflow.</a> The workflow uploads the built app as an artifact.
 
 <h3>Contributing</h3>
 
