@@ -10,8 +10,9 @@ const index_html = fs.readFileSync(
 
 const year = Config.year
 
-// Set year in index.html and write it
-const modified_index_html = index_html.replace("{year}", year)
+// Set year in index.html (twice to make sure it replaces all of {year}s) and write it
+let modified_index_html = index_html.replace("{year}", year)
+modified_index_html = modified_index_html.replace("{year}", year)
 fs.writeFileSync(
     join("build", "index.html"), 
     modified_index_html
