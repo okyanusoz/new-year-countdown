@@ -43,7 +43,7 @@ jobs:
           name: Built app
           path: build
       - name: Add README
-        run: curl https://raw.githubusercontent.com/$GITHUB_REPOSITORY/${GITHUB_REF#refs/heads/}/ci/static-build-README.md > README
+        run: curl -s https://raw.githubusercontent.com/$GITHUB_REPOSITORY/${GITHUB_REF#refs/heads/}/ci/static-build-README.md > README
       - name: Create .vercel/project.json
         run: |
           mkdir .vercel
