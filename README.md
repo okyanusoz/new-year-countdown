@@ -29,7 +29,7 @@ To build, run(after running npm install):
 
 The built app will be in the build directory.
 
-If you just want to build the app, you can also get the built app from the [https://github.com/okyanusoz/new-year-countdown/actions/workflows/deploy.yml](Build and Deploy workflow).</a> The workflow uploads the built app as an artifact.
+If you just want to build the app, you can also get the built app from the [Build and Deploy workflow](https://github.com/okyanusoz/new-year-countdown/actions/workflows/deploy.yml).</a> The workflow uploads the built app as an artifact.
 
 ## Contributing
 
