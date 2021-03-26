@@ -1,6 +1,6 @@
 {
   "name": "new-year-countdown",
-  "version": "2.1.0",
+  "version": "",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.0.0-beta2",
