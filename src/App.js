@@ -56,14 +56,6 @@ function App() {
       <br />
       <h1>{timeLeft}</h1>
       <br />
-      {secondsLeft ? (
-        <div className="seconds-left">
-          <h3>OR</h3>
-          <br />
-          {secondsLeft} seconds
-        </div>
-      ) : null}
-      <br />
       <GitHubForkRibbon href={`https://github.com/${Config.GITHUB_REPO}`} target="_blank" color="black" position="right">
         Fork me on GitHub
       </GitHubForkRibbon>
