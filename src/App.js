@@ -39,7 +39,6 @@ function App() {
       }
       const timeLeft = timeLeftArray.join(" ")
       setTimeLeft(timeLeft)
-      setSecondsLeft(parseInt(distance / 1000))
     }
     interval = setInterval(callback, 1000)
 
