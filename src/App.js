@@ -6,7 +6,6 @@ import GitHubForkRibbon from 'react-github-fork-ribbon'
 
 function App() {
   const [timeLeft, setTimeLeft] = useState("Loading...")
-  const [secondsLeft, setSecondsLeft] = useState(0)
 
   useEffect(() => {
     var interval
@@ -19,7 +18,6 @@ function App() {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000)
       if(distance < 0){
         setTimeLeft("Expired. Happy new year!")
-        setSecondsLeft(0)
         clearInterval(interval)
         return
       }
