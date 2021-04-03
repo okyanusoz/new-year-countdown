@@ -3,7 +3,7 @@
 
 See it in action: https://new-year-countdown-nine.vercel.app/
 
-This is a simple new year countdown(currently 2021).
+This is a simple new year countdown(currently 2022).
 
 ### Running it locally
 
