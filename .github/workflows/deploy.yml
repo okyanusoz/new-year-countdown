@@ -72,6 +72,6 @@ jobs:
           --header 'content-type: application/json' \
           --data '{
             "base": "main",
-            "head": "head"
+            "head": "stable"
             }' \
           --fail
