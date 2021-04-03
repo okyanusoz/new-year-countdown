@@ -56,22 +56,3 @@ jobs:
         run: vercel --token $VERCEL_TOKEN --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  stable_merge:
-    name: Merge main into stable
-    needs: build
-    runs-on: ubuntu-20.04
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: Merge main into stable
-        run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/merges \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "base": "main",
-            "head": "stable"
-            }' \
-          --fail
