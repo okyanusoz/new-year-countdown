@@ -49,7 +49,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Countdown to {Config.year}</h2>
+      <h2>{Config.countdownToText} {Config.year}</h2>
       <br />
       <h1>{timeLeft}</h1>
       <br />
