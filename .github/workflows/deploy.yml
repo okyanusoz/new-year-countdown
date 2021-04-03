@@ -60,12 +60,18 @@ jobs:
     name: Merge main into stable
     needs: build
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        shell: bash
     steps:
-      - name: Get source code
-        uses: actions/checkout@v2
-      - name: Merge
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: Stable Merge Bot
-          author_email: stable-merge-bot@new-year-countdown.local
-          message: Merge latest tested changes from main
+      - name: Merge main into stable
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/merges \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "base": "main",
+            "head": "head"
+            }' \
+          --fail
