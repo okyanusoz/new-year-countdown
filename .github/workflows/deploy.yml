@@ -56,3 +56,16 @@ jobs:
         run: vercel --token $VERCEL_TOKEN --prod
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  stable_merge:
+    name: Merge main into stable
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Get source code
+        uses: actions/checkout@v2
+      - name: Merge
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Stable Merge Bot
+          author_email: stable-merge-bot@new-year-countdown.local
+          message: Merge latest tested changes from main
