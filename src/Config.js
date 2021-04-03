@@ -5,7 +5,9 @@ const Config = {
     year: "2021",
     // the GitHub repo to redirect to in the Fork me button
     // format: {user}/{repo}
-    GITHUB_REPO: "okyanusoz/new-year-countdown"
+    GITHUB_REPO: "okyanusoz/new-year-countdown",
+    // "Countdown to" text
+    countdownToText: "Countdown to"
 }
 
 export default Config
