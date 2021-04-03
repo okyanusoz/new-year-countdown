@@ -53,7 +53,7 @@ function App() {
       <br />
       <h1>{timeLeft}</h1>
       <br />
-      <GitHubForkRibbon href={`https://github.com/${Config.GITHUB_REPO}`} target="_blank" color="black" position="right">
+      <GitHubForkRibbon href={Config.githubRepoURL} target="_blank" color="black" position="right">
         Fork me on GitHub
       </GitHubForkRibbon>
     </div>
