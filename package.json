@@ -7,7 +7,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-github-fork-ribbon": "^0.6.0",
-    "react-scripts": "4.0.3"
+    "react-scripts": "5.0.0"
   },
   "type": "module",
   "//": "We need to use ES modules in Node.js because we import Config.js in postbuild.js",
