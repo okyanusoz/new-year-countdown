@@ -7,7 +7,7 @@ This project is no longer maintained.
 
 See it in action: https://new-year-countdown-nine.vercel.app/
 
-This is a simple new year countdown(currently 2022).
+This is a simple new year countdown(currently 2023).
 
 ### Running it locally
 
