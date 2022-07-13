@@ -1,3 +1,7 @@
+# No Longer Maintained
+
+This project is no longer maintained.
+
 # New Year Countdown
 ![Build Status](https://github.com/okyanusoz/new-year-countdown/workflows/Build%20and%20Deploy/badge.svg)
 
